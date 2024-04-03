@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "47191128397",
+    "firebase_url": "https://project1-c4ddf-default-rtdb.firebaseio.com",
+    "project_id": "project1-c4ddf",
+    "storage_bucket": "project1-c4ddf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47191128397:android:45da11dce76d711ed25f04",
+        "android_client_info": {
+          "package_name": "com.example.project1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWSN1HOqDrfppKRJIIJBpTEflq5MpJU1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47191128397:android:11e3cd4231f3e4bed25f04",
+        "android_client_info": {
+          "package_name": "com.example.shoeson"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWSN1HOqDrfppKRJIIJBpTEflq5MpJU1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
