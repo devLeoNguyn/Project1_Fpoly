@@ -12,6 +12,8 @@ public class DrinksCoffee {
     private String description;
     private double star;
 
+    private int numberInCart;
+
 
     //constructor
     public DrinksCoffee() {
@@ -95,6 +97,16 @@ public class DrinksCoffee {
 
     public void setStar(double star) {
         this.star = star;
+    }
+
+
+
+    public int getNumberInCart() {
+        return numberInCart;
+    }
+
+    public void setNumberInCart(int numberInCart) {
+        this.numberInCart = numberInCart;
     }
 
 }

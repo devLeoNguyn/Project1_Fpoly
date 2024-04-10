@@ -46,7 +46,7 @@
                     app:srcCompat="@drawable/heart" />
 
                 <ImageView
-                    android:id="@+id/backBtn"
+                    android:id="@+id/backCartBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -258,20 +258,20 @@
         app:layout_constraintStart_toEndOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/btnAddCart"
             android:layout_width="240sp"
             android:layout_height="60sp"
             android:layout_marginTop="2dp"
             android:background="@drawable/background_plus"
-            android:src="@android:drawable/btn_star"
             android:text="Add to Cart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/txtTotal"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/txtTotalDetail"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/txtTotal"
+            android:id="@+id/txtTotalDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"

@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;  // Only needed if using Parcelable for a field
+import android.view.View;
 
 import com.bumptech.glide.Glide;
+import com.example.project1.Helper.ManagmentCart;
 import com.example.project1.Models.DrinksCoffee;
 import com.example.project1.R;
 import com.example.project1.databinding.ActivityDetailBinding;
@@ -16,6 +18,7 @@ public class DetailActivity extends AppCompatActivity {
     private ActivityDetailBinding binding;
     private DrinksCoffee object;
     private int num = 1;
+    private ManagmentCart managmentCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +31,13 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void setVariable() {
+        managmentCart = new ManagmentCart(this);
+
         if (object == null) {
             // Handle the case where object is null (e.g., show error message)
             return;
         }
-        binding.backBtn.setOnClickListener(v -> finish());
+        binding.backCartBtn.setOnClickListener(v -> finish());
         Glide.with(DetailActivity.this)
                 .load(object.getImage_Url())
                 .into(binding.imgDrinkDetail);
@@ -40,9 +45,32 @@ public class DetailActivity extends AppCompatActivity {
         // Thiết lập các giá trị còn thiếu
         binding.txtDecDetail.setText(object.getDescription());
         binding.ratingDetail.setRating((float) object.getStar());
-        binding.txtTotal.setText((num*object.getPrice()+""));
+        binding.txtTotalDetail.setText((num*object.getPrice()+""));
         binding.txtStarDetail.setText(object.getStar()+"");
         binding.txtNameDetail.setText(object.getName());
+
+        binding.btnTang.setOnClickListener(view -> {
+            num = num + 1;
+            binding.txtNum.setText(num + "");
+            binding.txtTotalDetail.setText("$" + (num + object.getPrice()));
+        });
+
+        binding.btnGiam.setOnClickListener(view -> {
+            if (num > 1) {
+                num = num - 1;
+                binding.txtNum.setText(num + "");
+                binding.txtTotalDetail.setText("$" + (num + object.getPrice()));
+
+            }
+        });
+
+        binding.btnAddCart.setOnClickListener(view -> {
+            object.setNumberInCart(num);
+            managmentCart.insertFood(object);
+        });
+
+
+
     }
 
     private void getIntentExtra() {
@@ -79,6 +107,7 @@ public class DetailActivity extends AppCompatActivity {
         object.setImage_Url(imageUrl);
         object.setStar(rating);
     }
+
 
 
 }

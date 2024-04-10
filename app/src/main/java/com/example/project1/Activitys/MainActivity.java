@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -41,12 +42,23 @@ public class MainActivity extends AppCompatActivity {
 //        ----------------
         initBestFood();
         initBean();
+//        setVariable();
 
     }
+
+//    private void setVariable(){
+//        binding.
+//    }
 
 // Hàm khởi tạo để lấy dữ liệu thức uống ngon nhất
 
 
+    private void setVariable() {
+        //signup
+        //search
+
+        binding.btnCart.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, CartActivity.class)));
+    }
     private void initBestFood() {
 
         // Khởi tạo Firebase
