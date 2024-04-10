@@ -1,0 +1,82 @@
+{
+  "CoffeeDrink": [
+    {
+      "category": "Capuchino",
+      "category_id": "0",
+      "customer_rating": 4.5,
+      "description": "With Steamed Milk",
+      "id": 0,
+      "image_url": "https://www.example.com/images/womens-dress.jpg",
+      "name": "Capuchino",
+      "price": 12.99,
+      "price_id": 0
+    },
+    {
+      "category": "Americano",
+      "customer_rating": 4.9,
+      "description": "Americano organic from Italy",
+      "id": 2,
+      "image_url": "https://www.example.com/images/apple-macbook-pro.jpg",
+      "name": "Americano Italy",
+      "price": 10.2
+    },
+    {
+      "category": "Expresso",
+      "category_id": "2",
+      "customer_rating": 4.7,
+      "description": "Expresso mixed cheese Moja",
+      "id": 2,
+      "image_url": "https://www.example.com/images/mens-sneakers.jpg",
+      "name": "Expresso Cheese",
+      "price": 15.2,
+      "price_id": 2
+    },
+    {
+      "category": "Macchiato",
+      "category_id": 3,
+      "customer_rating": 4.8,
+      "description": "With Steamed Milk",
+      "id": 3,
+      "id_price": "3",
+      "image_url": "https://www.example.com/images/sony-playstation-5.jpg",
+      "name": "Macchiato Milk",
+      "price": 9.8
+    }
+  ],
+  "Category": [
+    {
+      "id": 0,
+      "name": "Capuchino"
+    },
+    {
+      "id": 1,
+      "name": "Americano"
+    },
+    {
+      "id": 2,
+      "name": "Expresso"
+    },
+    {
+      "id": 3,
+      "name": "Macchiato"
+    }
+  ],
+  "Price": [
+    {
+      "id": 0,
+      "value": 12.99
+    },
+    {
+      "id": 1,
+      "value": 10.2
+    },
+    {
+      "id": 2,
+      "value": 15.2
+    },
+    {
+      "id": 3,
+      "value": 9.8
+    }
+  ]
+}
