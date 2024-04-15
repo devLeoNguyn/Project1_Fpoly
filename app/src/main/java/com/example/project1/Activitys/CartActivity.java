@@ -32,6 +32,7 @@ public class CartActivity extends AppCompatActivity {
         initListCart();
     }
 
+
     private void initListCart() {
         if (managmentCart.getListCart().isEmpty()) {
             binding.txtEmpty.setVisibility(View.VISIBLE);
@@ -40,7 +41,7 @@ public class CartActivity extends AppCompatActivity {
             binding.txtEmpty.setVisibility(View.GONE);
             binding.scrollCart.setVisibility(View.VISIBLE);
         }
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         binding.cartRecycle.setLayoutManager(linearLayoutManager);
         adapter = new CartsAdapter(managmentCart.getListCart(), this, () -> calculateCart());
         binding.cartRecycle.setAdapter(adapter);

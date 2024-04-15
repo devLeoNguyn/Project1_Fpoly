@@ -46,7 +46,7 @@
                     app:srcCompat="@drawable/heart" />
 
                 <ImageView
-                    android:id="@+id/backCartBtn"
+                    android:id="@+id/backDetailBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"

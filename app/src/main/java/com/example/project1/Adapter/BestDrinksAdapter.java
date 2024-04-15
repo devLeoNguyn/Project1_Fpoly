@@ -1,5 +1,6 @@
 package com.example.project1.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,7 +39,7 @@ public class BestDrinksAdapter extends RecyclerView.Adapter<BestDrinksAdapter.vi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BestDrinksAdapter.viewhoder holder, int position) {
+    public void onBindViewHolder(@NonNull BestDrinksAdapter.viewhoder holder, @SuppressLint("RecyclerView") int position) {
         int currentPosition = holder.getAdapterPosition();
 
         holder.txtName.setText(items.get(position).getName());

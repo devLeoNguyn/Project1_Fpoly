@@ -12,8 +12,10 @@ import android.view.View;
 
 import com.example.project1.Adapter.BeansAdapter;
 import com.example.project1.Adapter.BestDrinksAdapter;
+import com.example.project1.Adapter.CategoryAdapter;
 import com.example.project1.Models.BeansCoffee;
 import com.example.project1.Models.DrinksCoffee;
+import com.example.project1.Models.CategoriesCoffee;
 import com.example.project1.databinding.ActivityMainBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,8 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
-    //khai bao firebase
+    RecyclerView.Adapter adapterCategory;
+    private  RecyclerView recyclerViewCategoryList;
     private FirebaseDatabase database;
     private DatabaseReference myRef;
 
@@ -42,13 +44,61 @@ public class MainActivity extends AppCompatActivity {
 //        ----------------
         initBestFood();
         initBean();
-//        setVariable();
+        setVariable();
+        initCategory();
 
     }
 
-//    private void setVariable(){
-//        binding.
-//    }
+    private void initCategory() {
+
+        // Khởi tạo Firebase
+        database = FirebaseDatabase.getInstance();
+
+        // Lấy tham chiếu đến root của Firebase Realtime Database
+        myRef = database.getReference("Category");
+
+        // Thiết lập hiển thị thanh tiến trình trong khi lấy dữ liệu
+        binding.progressBarBestFood.setVisibility(View.VISIBLE);
+
+        // Khởi tạo danh sách rỗng để lưu trữ dữ liệu thức uống ngon nhất
+        ArrayList<CategoriesCoffee> listCategory = new ArrayList<>();
+
+        // Tạo truy vấn để tìm kiếm các node con có child "BestDrink" với giá trị là true
+        // (Lưu ý: tên child có thể là "BestDrinks" theo đoạn code trước đ
+        // Lắng nghe sự kiện thay đổi dữ liệu từ Firebase Realtime Database
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+
+            // Được gọi khi có dữ liệu mới được thêm, cập nhật hoặc xóa
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists())
+                    Log.d("Firebase", "Dữ liệu snapshot tồn tại, đang xử lý...");
+                {
+                    // Lặp qua từng node con (mỗi phần tử trong kết quả)
+                    for (DataSnapshot childSnapshot : snapshot.getChildren()) {
+                        // Xử lý dữ liệu của từng node con (phần tử)
+                        listCategory.add(childSnapshot.getValue(CategoriesCoffee.class));
+                    }
+                    Log.d("Firebase", "Nhận dữ liệu thành công: " + listCategory.size() + " mục");
+                    if (listCategory.size() > 0) {
+                        binding.recyclerViewCategory.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
+                        RecyclerView.Adapter adapter = new CategoryAdapter(listCategory);
+                        binding.recyclerViewCategory.setAdapter(adapter);
+
+                    }
+                    // Ẩn thanh tiến trình khi đã lấy xong dữ liệu
+                    binding.progressBarBestFood.setVisibility(View.GONE);
+                }
+            }
+
+            // Được gọi khi có lỗi xảy ra trong quá trình truy vấn dữ liệu
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("Firebase", "Error fetching data", error.toException());
+                // Xử lý lỗi nếu cần
+            }        });
+    }
+
 
 // Hàm khởi tạo để lấy dữ liệu thức uống ngon nhất
 

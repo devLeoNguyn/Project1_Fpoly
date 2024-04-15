@@ -37,7 +37,7 @@ public class DetailActivity extends AppCompatActivity {
             // Handle the case where object is null (e.g., show error message)
             return;
         }
-        binding.backCartBtn.setOnClickListener(v -> finish());
+        binding.backDetailBtn.setOnClickListener(v -> finish());
         Glide.with(DetailActivity.this)
                 .load(object.getImage_Url())
                 .into(binding.imgDrinkDetail);
