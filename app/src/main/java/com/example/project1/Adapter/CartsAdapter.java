@@ -20,65 +20,65 @@ import com.example.project1.R;
 
 import java.util.ArrayList;
 
-public class CartsAdapter extends RecyclerView.Adapter<CartsAdapter.viewhoder> {
-    ArrayList<DrinksCoffee> list;
+public class CartsAdapter extends RecyclerView.Adapter<CartsAdapter.ViewHolder> {
+    private ArrayList<DrinksCoffee> itemList;
+    private Context context;
     private ManagmentCart managmentCart;
-    ChangeNumberItemsListener changeNumberItemsListener;
+    private ChangeNumberItemsListener changeNumberItemsListener;
 
-    public CartsAdapter(ArrayList<DrinksCoffee> list, Context context, ChangeNumberItemsListener changeNumberItemsListener) {
-        this.list = list;
-        managmentCart= new ManagmentCart(context);
+    public CartsAdapter(ArrayList<DrinksCoffee> itemList, Context context, ChangeNumberItemsListener changeNumberItemsListener) {
+        this.itemList = itemList;
+        this.context = context;
+        this.managmentCart = new ManagmentCart(context);
         this.changeNumberItemsListener = changeNumberItemsListener;
     }
 
     @NonNull
     @Override
-    public CartsAdapter.viewhoder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_viewhoder,parent,false);
-        return new viewhoder(inflate);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_viewhoder, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartsAdapter.viewhoder holder, int position) {
-        holder.nameCart.setText(list.get(position).getName());
-        holder.feeEach.setText("$"+list.get(position).getPrice());
-        holder.totalFeeItem.setText(list.get(position).getNumberInCart()+"*$"+(
-                list.get(position).getNumberInCart()*list.get(position).getPrice()));
-        holder.numCart.setText(list.get(position).getNumberInCart()+"");
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        DrinksCoffee item = itemList.get(position);
 
-        Glide.with(holder.itemView.getContext())
-                .load(list.get(position).getImage_Url())
-                .transform(new CenterCrop(),new RoundedCorners(30))
+        holder.nameCart.setText(item.getName());
+        holder.feeEach.setText("$" + item.getPrice());
+        holder.numCart.setText(String.valueOf(item.getNumberInCart()));
+        holder.totalFeeItem.setText("$" + (item.getNumberInCart() * item.getPrice()));
+
+        Glide.with(context)
+                .load(item.getImage_Url())
+                .transform(new CenterCrop(), new RoundedCorners(30))
                 .into(holder.imgCart);
 
-        holder.btnThemCart.setOnClickListener(view -> managmentCart.plusNumberItem(list, position, new ChangeNumberItemsListener() {
-            @Override
-            public void change() {
+        holder.btnThemCart.setOnClickListener(view -> {
+            managmentCart.plusNumberItem(itemList, position, () -> {
                 notifyDataSetChanged();
                 changeNumberItemsListener.change();
-            }
-        }));
+            });
+        });
 
-        holder.btnGiamCart.setOnClickListener(view -> managmentCart.minusNumberItem(list, position, new ChangeNumberItemsListener() {
-            @Override
-            public void change() {
+        holder.btnGiamCart.setOnClickListener(view -> {
+            managmentCart.minusNumberItem(itemList, position, () -> {
                 notifyDataSetChanged();
                 changeNumberItemsListener.change();
-            }
-        }));
-
+            });
+        });
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return itemList.size();
     }
 
-    public class viewhoder extends RecyclerView.ViewHolder {
-        TextView nameCart, feeEach, totalFeeItem, btnThemCart, btnGiamCart,numCart;
-
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView nameCart, feeEach, totalFeeItem, btnThemCart, btnGiamCart, numCart;
         ImageView imgCart;
-        public viewhoder(@NonNull View itemView) {
+
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
             nameCart = itemView.findViewById(R.id.txtNameItem_Cart);
             feeEach = itemView.findViewById(R.id.txtFeeEach);

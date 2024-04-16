@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/img_Category"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
         android:src="@drawable/categorybtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +22,7 @@
     <TextView
         android:id="@+id/txtName_Category"
         android:layout_width="65dp"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:gravity="center"
         android:text="Capucchino"

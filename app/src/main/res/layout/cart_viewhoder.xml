@@ -1,161 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="245.68dp"
+    android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    app:cardCornerRadius="23dp"
-    app:cardMaxElevation="10dp">
+    android:orientation="vertical">
 
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background_gradient">
+        android:layout_height="245.68dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="23dp"
+        app:cardMaxElevation="10dp">
 
-
-        <TextView
-            android:id="@+id/txtFeeEach"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:text="4.20"
-            android:textColor="#ECEAEA"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/textView6"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="$"
-            android:textColor="#D17842"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.016"
-            app:layout_constraintStart_toEndOf="@+id/img_Bean"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnGiam_Cart"
-            android:layout_width="32dp"
-            android:layout_height="31dp"
-            android:layout_marginEnd="156dp"
-            android:background="@drawable/background_plus"
-            android:text="-"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.167">
-
-        </androidx.appcompat.widget.AppCompatButton>
-
-        <ImageView
-            android:id="@+id/imgItem_Cart"
-            style="@style/circular"
-            android:layout_width="200dp"
-            android:layout_height="124dp"
-            android:src="@drawable/backroundsearch"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-
-        </ImageView>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnThem_Cart"
-            android:layout_width="32dp"
-            android:layout_height="31dp"
-            android:layout_marginEnd="96dp"
-            android:background="@drawable/background_plus"
-            android:text="+"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.167">
-
-        </androidx.appcompat.widget.AppCompatButton>
-
-        <TextView
-            android:id="@+id/txtNumCart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="1"
-            android:textColor="#ffff"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/btnThem_Cart"
-            app:layout_constraintStart_toEndOf="@+id/btnGiam_Cart"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgItem_Cart"
-            app:layout_constraintVertical_bias="0.0">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_gradient">
+
 
             <TextView
-                android:id="@+id/txtNameItem_Cart"
+                android:id="@+id/txtFeeEach"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:lineHeight="20dp"
-                android:text="Capuccino"
-                android:textColor="#F8F5F5"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.052"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:text="$"
-                android:textColor="#D17842"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.859"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/txtTotalFeeItem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="20dp"
                 android:text="4.20"
-                android:textColor="#D17842"
-                android:textSize="25dp"
+                android:textColor="#ECEAEA"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/textView17"
+                app:layout_constraintStart_toEndOf="@+id/textView6"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="52dp"
+                android:text="$"
+                android:textColor="#D17842"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.016"
+
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnGiam_Cart"
+                android:layout_width="32dp"
+                android:layout_height="31dp"
+                android:layout_marginEnd="156dp"
+                android:background="@drawable/background_plus"
+                android:text="-"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.167">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+            <ImageView
+                android:id="@+id/imgItem_Cart"
+                style="@style/circular"
+                android:layout_width="200dp"
+                android:layout_height="124dp"
+                android:src="@drawable/backroundsearch"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+            </ImageView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnThem_Cart"
+                android:layout_width="32dp"
+                android:layout_height="31dp"
+                android:layout_marginEnd="96dp"
+                android:background="@drawable/background_plus"
+                android:text="+"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.167">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+            <TextView
+                android:id="@+id/txtNumCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="1"
+                android:textColor="#ffff"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/btnThem_Cart"
+                app:layout_constraintStart_toEndOf="@+id/btnGiam_Cart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgItem_Cart"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:id="@+id/txtNameItem_Cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:lineHeight="20dp"
+                    android:text="Capuccino"
+                    android:textColor="#F8F5F5"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.052"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="56dp"
+                    android:text="$"
+                    android:textColor="#D17842"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.753"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtTotalFeeItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="56dp"
+                    android:text="4.20"
+                    android:textColor="#D17842"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/textView17"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

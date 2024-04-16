@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                     // Ẩn thanh tiến trình khi đã lấy xong dữ liệu
-                    binding.progressBarBestFood.setVisibility(View.GONE);
+                    binding.progressBarCategory.setVisibility(View.GONE);
                 }
             }
 

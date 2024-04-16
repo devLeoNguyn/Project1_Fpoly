@@ -40,41 +40,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewho
 
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.viewholder holder, int position) {
-
         holder.txtNameCategory.setText(items.get(position).getName());
 
-
-        switch (position){
-            case 0: {
-                holder.imgCategory.setBackgroundResource(R.drawable.background_category);
-                break;
-            }
-            case 1: {
-                holder.imgCategory.setBackgroundResource(R.drawable.background_category);
-                break;
-            }
-            case 2: {
-                holder.imgCategory.setBackgroundResource(R.drawable.background_category);
-                break;
-            }
-            case 3: {
-                holder.imgCategory.setBackgroundResource(R.drawable.background_category);
-                break;
-            }
-            case 4: {
-                holder.imgCategory.setBackgroundResource(R.drawable.background_category);
-                break;
-            }
-            case 5: {
-                holder.imgCategory.setBackgroundResource(R.drawable.background_category);
-                break;
-            }
-            case 6: {
-                holder.imgCategory.setBackgroundResource(R.drawable.background_category);
-                break;
-            }
+        int drawableResourceId;
+        if (position == 0) {
+            drawableResourceId = R.drawable.background_category;
+        } else {
+            drawableResourceId = context.getResources().getIdentifier(items.get(position).getImage_Url(), "drawable", holder.itemView.getContext().getPackageName());
         }
-        int drawableResourceId = context.getResources().getIdentifier(items.get(position).getImage_Url(), "drawable", holder.itemView.getContext().getPackageName());
+
         Glide.with(context)
                 .load(drawableResourceId)
                 .into(holder.imgCategory);
