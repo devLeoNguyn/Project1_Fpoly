@@ -54,7 +54,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtUser"
+            android:id="@+id/dk_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Name"
@@ -72,7 +72,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtEmail"
+            android:id="@+id/dk_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -91,7 +91,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtPass"
+            android:id="@+id/dk_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -109,7 +109,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtRepass"
+            android:id="@+id/dk_pass_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
@@ -118,7 +118,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/bttDangKy"
         android:layout_marginTop="5dp"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -137,14 +137,14 @@
             android:textColor="@color/white"
             android:text="Don't have account? Click"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/txtSignin"
+            app:layout_constraintEnd_toStartOf="@id/tv_dnnow"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
 
         <TextView
-            android:id="@+id/txtSignin"
+            android:id="@+id/tv_dnnow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign In"

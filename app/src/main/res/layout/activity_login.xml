@@ -45,7 +45,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtUser"
+            android:id="@+id/dn_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
@@ -65,7 +65,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtPass"
+            android:id="@+id/dn_pass"
             android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
 
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btt_DangNhap"
         android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_marginTop="5dp"
@@ -86,7 +86,7 @@
         android:text="Sign In" />
 
     <Button
-        android:id="@+id/btnLoginGoogle"
+        android:id="@+id/DangNhapGoogle"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
         android:layout_width="300dp"
@@ -109,14 +109,14 @@
             android:text="Don't have account? Click"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/txtRegister"
+            app:layout_constraintEnd_toStartOf="@id/tv_dknow"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
 
         <TextView
-            android:id="@+id/txtRegister"
+            android:id="@+id/tv_dknow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Register"
@@ -141,14 +141,14 @@
             android:textColor="@color/white"
             android:layout_marginTop="-36dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/edtForgot"
+            app:layout_constraintEnd_toStartOf="@id/tv_forgotpass"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
 
         <TextView
-            android:id="@+id/edtForgot"
+            android:id="@+id/tv_forgotpass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reset"
